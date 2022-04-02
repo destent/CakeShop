@@ -14,10 +14,13 @@
     <title>登录</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
 </head>
 <body>
-<jsp:include page="nav.jsp" />
-    <div class="container">
+
+<div class="cont">
+    <jsp:include page="nav.jsp" />
+    <div class="container main">
 
         <div class="row">
             <img src="img/welcom.png" alt="welcom" class="col-sm-offset-2 col-sm-8 img-responsive">
@@ -49,6 +52,10 @@
             </div>
         </form>
     </div>
+    <jsp:include page="footer.jsp"/>
+</div>
+
+
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="js/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
