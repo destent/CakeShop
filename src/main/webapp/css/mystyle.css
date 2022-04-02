@@ -1,0 +1,38 @@
+.mylist li{
+   font-size: 18px;
+   margin: 5px 0;
+}
+.mylist a{
+   text-decoration: none;
+   color: black;
+}
+.mylist a:hover{
+   color: blue;
+}
+.myinfo{
+   border: 1px solid #cccccc;
+   padding: 0;
+   margin-bottom: 20px;
+}
+.myinfo img{
+   width: 10%;
+}
+.ontop{
+   background-color: rgb(245,248,250);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 5px 10px;
+}
+.ontop span{
+   width: 90px;
+}
+.onbottom ul{
+   padding-top: 5px;
+   display: flex;
+   justify-content: space-around;
+}
+.wuliu{
+   background-color: rgb(245,248,250);
+   padding: 10px;
+}
