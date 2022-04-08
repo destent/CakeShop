@@ -26,6 +26,7 @@
 }
 .ontop span{
    width: 90px;
+   margin-left: 10px !important;
 }
 .onbottom ul{
    padding-top: 5px;
@@ -35,6 +36,7 @@
 .wuliu{
    background-color: rgb(245,248,250);
    padding: 10px;
+   margin-bottom: 20px;
 }
 .cont{
    padding: 0;

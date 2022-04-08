@@ -10,6 +10,10 @@
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>com.connectyu.servlet.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>JspObjectServlet</servlet-name>
+    <servlet-class>com.connectyu.servlet.JspObjectServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>
     <url-pattern>/registerServlet</url-pattern>
@@ -17,5 +21,9 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/loginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JspObjectServlet</servlet-name>
+    <url-pattern>/jspObjectServlet</url-pattern>
   </servlet-mapping>
 </web-app>
