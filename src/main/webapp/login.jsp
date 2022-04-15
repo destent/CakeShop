@@ -1,9 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-    request.setAttribute("status","hidden");
-    if(request.getAttribute("flag")=="error")
-        request.setAttribute("status","show");
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 <!doctype html>
 <html lang="zh-CN">
 <head>
@@ -40,8 +35,8 @@
                 </div>
             </div>
             <div class="center-block ">
-                <div class="col-sm-offset-2 col-sm-8 alert alert-danger <%= request.getAttribute("status")%> " role="alert">
-                    <%= request.getAttribute("info")%>
+                <div class="col-sm-offset-2 col-sm-8 alert alert-danger ${requestScope.status} " style="display: none" role="alert">
+                    ${requestScope.info}
                 </div>
             </div>
             <div class="form-group">

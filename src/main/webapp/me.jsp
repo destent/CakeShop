@@ -1,22 +1,5 @@
-<%@ page import="com.connectyu.model.User" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    User user = (User) session.getAttribute("user");
-    String name = null;
-    String address = null;
-    String phone = null;
-    String username = null;
-    if(user!=null){
-        name = user.getName();
-        phone = user.getPhone();
-        address = user.getAddress();
-        username = user.getUsername();
-    }else {
-        username = "请登录";
-    }
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
-
-%>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -72,7 +55,7 @@
             <div class="ontop">
                 <div>
                     <img src="img/touxiang.jpg" class="img-circle" alt="">
-                    <span style="margin-left: 10px"><%=username%></span>
+                    <span style="margin-left: 10px">${sessionScope.user.username}</span>
                 </div>
             </div>
             <div class="onbottom">
@@ -89,7 +72,6 @@
                 </ul>
             </div>
         </div>
-
         <div class="col-sm-8 wuliu" style="margin-bottom: 20px">
             收件人信息
         </div>
@@ -101,7 +83,7 @@
                 <span class="col-sm-2"></span>
                 <div class="form-group center-block col-sm-8">
                     <label for="username">收件人</label>
-                    <input type="text" class="form-control" name="username" id="username" value="<%=name%>">
+                    <input type="text" class="form-control" name="username" id="username" value="${sessionScope.user.name}">
                 </div>
             </div>
 
@@ -109,14 +91,14 @@
                 <span class="col-sm-2"></span>
                 <div class="form-group  col-sm-8">
                     <label for="phone">电话</label>
-                    <input type="text" name="phone" class="form-control" id="phone" value="<%=phone%>">
+                    <input type="text" name="phone" class="form-control" id="phone" value="${sessionScope.user.phone}">
                 </div>
             </div>
             <div class="row">
                 <span class="col-sm-2"></span>
                 <div class="form-group  col-sm-8">
                     <label for="address">收货地址</label>
-                    <input type="text" name="address" class="form-control" id="address" value="<%=address%>">
+                    <input type="text" name="address" class="form-control" id="address" value="${sessionScope.user.address}">
                 </div>
             </div>
         </form>

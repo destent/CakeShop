@@ -1,4 +1,4 @@
-package com.connectyu.servlet;
+package com.connectyu.test.servlet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;

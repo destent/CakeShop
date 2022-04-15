@@ -1,4 +1,4 @@
-package com.connectyu.model;
+package com.connectyu.test.model;
 
 public class User {
     private int id;

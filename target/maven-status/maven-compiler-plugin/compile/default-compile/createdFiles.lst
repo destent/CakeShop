@@ -1,4 +1,4 @@
-com\connectyu\servlet\LoginServlet.class
-com\connectyu\model\User.class
-com\connectyu\servlet\RegisterServlet.class
-com\connectyu\servlet\JspObjectServlet.class
+com\connectyu\test\servlet\JspObjectServlet.class
+com\connectyu\test\servlet\RegisterServlet.class
+com\connectyu\test\model\User.class
+com\connectyu\test\servlet\LoginServlet.class

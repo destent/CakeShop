@@ -4,15 +4,15 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>RegisterServlet</servlet-name>
-    <servlet-class>com.connectyu.servlet.RegisterServlet</servlet-class>
+    <servlet-class>com.connectyu.test.servlet.RegisterServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
-    <servlet-class>com.connectyu.servlet.LoginServlet</servlet-class>
+    <servlet-class>com.connectyu.test.servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>JspObjectServlet</servlet-name>
-    <servlet-class>com.connectyu.servlet.JspObjectServlet</servlet-class>
+    <servlet-class>com.connectyu.test.servlet.JspObjectServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RegisterServlet</servlet-name>

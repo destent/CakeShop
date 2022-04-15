@@ -1,6 +1,6 @@
-package com.connectyu.servlet;
+package com.connectyu.test.servlet;
 
-import com.connectyu.model.User;
+import com.connectyu.test.model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             resp.sendRedirect(req.getContextPath()+"/me.jsp");
         }else{
             //request对象传递数据
-            req.setAttribute("flag","error");
+            req.setAttribute("status","show");
             req.setAttribute("info","用户名或密码错误!");
             dispatcher = req.getRequestDispatcher("/login.jsp");
             dispatcher.forward(req,resp);

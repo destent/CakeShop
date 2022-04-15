@@ -1,4 +1,4 @@
-package com.connectyu.servlet;
+package com.connectyu.test.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -29,7 +29,8 @@ public class RegisterServlet extends HttpServlet{
         RequestDispatcher dispatcher;
         if (username==null || username.isEmpty() || password==null || password.isEmpty()){
             //request对象传递数据
-            req.setAttribute("flag","error");
+            req.setAttribute("status","show");
+            req.setAttribute("info","用户名或密码错误！");
             dispatcher = req.getRequestDispatcher("/register.jsp");
         }else{
             dispatcher = req.getRequestDispatcher("/login.jsp");
