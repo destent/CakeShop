@@ -1,0 +1,92 @@
+a {
+    text-decoration: none !important;  /*去掉a标签文字下面的下划线*/
+}
+.header {
+    display: flex;  /* 让header下面的元素在一行排列*/
+    background: #5d4b33;
+}
+.header a {
+    display: inline-block;  /* a标签转换成行内块元素，就可以设置高度了*/
+    height: 50px;
+    line-height: 50px;    /* 行高*/
+    padding-left: 12px;   /* 左边的文字内容距离做边框的距离*/
+    padding-right: 12px;   /* 右边的文字内容距离做边框的距离*/
+    color: #fff;
+    border-right: 1px solid #725e44;  /* 右边框线*/
+
+}
+.header a:hover,.header a:active {   /*a标签元素鼠标放上去或者点击时背景颜色变成橙色*/
+    background: #f07819;
+}
+.copy {
+    position: fixed;   /*固定定位，一直在底部*/
+    height: 80px;
+    width: 100%;
+    line-height: 80px;   /* 行高和高度一样高的话一行文字就会垂直方向居中*/
+    text-align: center;
+    bottom: 0;   /* 位置固定在底部*/
+}
+.form-block {
+    margin: 0 auto;
+    width: 600px;
+    padding: 30px;
+    margin-top: 100px;
+}
+.txt {
+    width: 100%;
+    height: 32px;
+}
+.lab {
+    display: inline-block;
+    color: #a39f9c;
+    font-size: 14px;
+    padding: 6px 0;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    color: #757575;
+}
+.item-option {
+    height: 38px;
+    line-height: 38px;
+}
+.btn {
+    width: 80px;
+    height: 36px;
+    background: #F07819;
+    color: #fff;
+    line-height: 36px;
+    font-size: 14px;
+    border: none;
+}
+.btn-block {
+    text-align: center;
+    margin-top: 12px;
+}
+.btn-block .btn:first-child {
+    margin-right: 24px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 24px;
+    color: #757575;
+    margin-bottom:24px ;
+}
+table tr td,table tr th {
+    padding: 8px 12px;
+}
+table tr:nth-child(even) {
+    background: #d3dfed47;
+}
+table tr:nth-child(odd) {
+    background: #FFF
+}
+.abtn {
+    display: inline-block;
+    padding: 6px 8px;
+    text-align: center;
+    background: #f07819;
+    color: #fff;
+}

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false" %>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,8 +8,9 @@
 </head>
 
 <body>
-	<% pageContext.setAttribute("pageData", "Web域相关对象使用");
-	   pageContext.setAttribute("varTest", "页面作用域");
+	<%
+		pageContext.setAttribute("pageData", "Web域相关对象使用");
+		pageContext.setAttribute("varTest", "页面作用域");
 	%>
 	
 	表达式\${pageScope.pageData}的值为：${pageScope.pageData} <br /> 
