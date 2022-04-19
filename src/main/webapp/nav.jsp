@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#">商品分类</a></li>
-                <li><a href="good_list.jsp">热销</a></li>
+                <li><a href="goodsListServlet">热销</a></li>
                 <li><a href="#">新品</a></li>
                 <li><a href="#">购物车</a></li>
                 <li><a href="#">后台管理</a></li>
