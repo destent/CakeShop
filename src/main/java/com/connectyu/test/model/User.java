@@ -8,18 +8,23 @@ public class User {
     private String name;
     private String phone;
     private String address;
+    private byte isadmin;
+    private byte isvalidate;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+    public byte getIsadmin() {
+        return isadmin;
+    }
+
+    public void setIsadmin(byte isadmin) {
+        this.isadmin = isadmin;
+    }
+
+    public byte getIsvalidate() {
+        return isvalidate;
+    }
+
+    public void setIsvalidate(byte isvalidate) {
+        this.isvalidate = isvalidate;
     }
 
     public int getId() {
@@ -76,5 +81,20 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", isadmin=" + isadmin +
+                ", isvalidate=" + isvalidate +
+                '}';
     }
 }

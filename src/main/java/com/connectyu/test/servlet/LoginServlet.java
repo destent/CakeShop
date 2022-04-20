@@ -1,5 +1,6 @@
 package com.connectyu.test.servlet;
 
+import com.connectyu.test.dao.UserDao;
 import com.connectyu.test.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class LoginServlet extends HttpServlet {
     @Override
@@ -21,24 +24,25 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         RequestDispatcher dispatcher;
-        if(username.equals("admin") && password.equals("123456")){
+        UserDao userDao = new UserDao();
+        User user = null;
+        try {
+            user = userDao.login(username, password);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        if (user!=null) {//登陆成功前往个人中心并发送用户信息
             HttpSession session = req.getSession();
-            //模拟用户
-            User user = new User();
-            user.setUsername(username);
-            user.setPassword(password);
-            user.setName("测试");
-            user.setPhone("1342567908");
-            user.setAddress("武汉华夏理工学院");
-            session.setAttribute("user",user);
-            //用户名密码符合进入个人中心
-            resp.sendRedirect(req.getContextPath()+"/me.jsp");
-        }else{
-            //request对象传递数据
-            req.setAttribute("status","show");
-            req.setAttribute("info","用户名或密码错误!");
+            //session传递数据
+            session.setAttribute("user", user);
+            //重定向至个人中心
+            resp.sendRedirect(req.getContextPath() + "/me.jsp");
+        } else {
+            //登录失败留在登录页面并返回错误信息
+            req.setAttribute("status", "show");
+            req.setAttribute("info", "用户名或密码错误!");
             dispatcher = req.getRequestDispatcher("/login.jsp");
-            dispatcher.forward(req,resp);
+            dispatcher.forward(req, resp);
         }
     }
 }

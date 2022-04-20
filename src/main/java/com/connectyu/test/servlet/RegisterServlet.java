@@ -1,7 +1,11 @@
 package com.connectyu.test.servlet;
 
+import com.connectyu.test.dao.UserDao;
+import com.connectyu.test.model.User;
+
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,22 +24,36 @@ public class RegisterServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
-        String[] hobbies = req.getParameterValues("hobby");
-        String sex = req.getParameter("sex");
-        //请求转发
-        //用户名为空的情况下，跳转到注册页面，否则就跳转到登录页面
-        RequestDispatcher dispatcher;
-        if (username==null || username.isEmpty() || password==null || password.isEmpty()){
-            //request对象传递数据
-            req.setAttribute("status","show");
-            req.setAttribute("info","用户名或密码错误！");
-            dispatcher = req.getRequestDispatcher("/register.jsp");
-        }else{
-            dispatcher = req.getRequestDispatcher("/login.jsp");
+        RequestDispatcher dispatcher = null;
+        User user = new User();
+        user.setUsername(req.getParameter("username"));
+        user.setName(req.getParameter("name"));
+        user.setEmail(req.getParameter("email"));
+        user.setPhone(req.getParameter("phone"));
+        user.setAddress(req.getParameter("address"));
+        user.setPassword(req.getParameter("password"));
+        user.setIsadmin((byte) 0);
+        user.setIsvalidate((byte) 0);
+        UserDao userDao = new UserDao();
+        try {
+            int i = userDao.addUser(user);
+            if(i == 1){
+                dispatcher = req.getRequestDispatcher("/login.jsp");
+            }else if(i==2){
+                req.setAttribute("status","show");
+                req.setAttribute("info","用户名已存在！");
+                dispatcher = req.getRequestDispatcher("/register.jsp");
+            }else {
+                req.setAttribute("status","show");
+                req.setAttribute("info","邮箱已被使用！");
+                dispatcher = req.getRequestDispatcher("/register.jsp");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            assert dispatcher != null;
+            dispatcher.forward(req,resp);
         }
-        dispatcher.forward(req,resp);
     }
     
     

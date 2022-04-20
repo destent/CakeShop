@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - javaee@localhost" uuid="0616fb30-1d8a-46cc-a858-24564e96f862">
+    <data-source source="LOCAL" name="cakeshop@localhost" uuid="ab176f28-7bd5-4c7a-bbdd-41b3521c2c1d">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/javaee</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/cakeshop</jdbc-url>
     </data-source>
   </component>
 </project>

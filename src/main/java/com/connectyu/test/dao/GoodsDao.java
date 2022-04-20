@@ -1,21 +1,20 @@
 package com.connectyu.test.dao;
 
 import com.connectyu.test.model.Goods;
+import com.connectyu.test.utils.C3p0Utils;
 
-import java.util.ArrayList;
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.List;
 
 public class GoodsDao {
 
-    public ArrayList<Goods> findAllGoods(){
-        ArrayList<Goods> goodsList = new ArrayList<Goods>();
-        for (int i = 0; i <= 10 ; i++) {
-            Goods goods=new Goods();
-            goods.setId(i);
-            goods.setName("草莓冰淇淋");
-            goods.setImage1("picture/9-1.jpg");
-            goods.setPrice(299);
-            goodsList.add(goods);
-        }
-        return goodsList;
+    public List<Goods> findAllGoods() throws SQLException {
+        DataSource dataSource = C3p0Utils.getDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        return queryRunner.query("select * from goods", new BeanListHandler<>(Goods.class));
     }
 }

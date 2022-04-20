@@ -10,13 +10,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "GoodsListServlet" ,urlPatterns = "/goodsListServlet")
 public class GoodsListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         GoodsDao goodsDao = new GoodsDao();
-        ArrayList<Goods> allGoods = goodsDao.findAllGoods();
+        List<Goods> allGoods = null;
+        try {
+            allGoods = goodsDao.findAllGoods();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         request.setAttribute("goodsList",allGoods);
         RequestDispatcher dispatcher;
         dispatcher = request.getRequestDispatcher("good_list.jsp");

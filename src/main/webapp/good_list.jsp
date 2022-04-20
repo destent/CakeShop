@@ -32,7 +32,7 @@
                     <a href="/goods_detail?id=9">
                         <div class="more-product"><span> </span></div>
                         <div class="product-img">
-                            <img src="${goods.image1}" class="img-responsive" alt="${goods.name}" width="240" height="240">
+                            <img src="${pageContext.request.contextPath}/${goods.image1}" class="img-responsive" alt="${goods.name}" width="240" height="240">
 
                         </div>
                     </a>
