@@ -4,7 +4,6 @@ import com.connectyu.test.dao.UserDao;
 import com.connectyu.test.model.User;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
