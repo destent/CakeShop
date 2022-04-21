@@ -38,7 +38,7 @@
 <%--                登录成功，显示个人中心--%>
                 <c:if test="${!empty sessionScope.user}">
                     <li><a href="me.jsp">个人中心</a></li>
-                    <li><a href="login.jsp">退出</a></li>
+                    <li><a href="/test/quitServlet">退出</a></li>
                 </c:if>
             </ul>
         </div><!-- /.navbar-collapse -->

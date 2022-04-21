@@ -4,6 +4,7 @@ d:\coding\test\src\main\java\com\connectyu\test\servlet\JspObjectServlet.java
 d:\coding\test\src\main\java\com\connectyu\test\dao\GoodsDao.java
 d:\coding\test\src\main\java\com\connectyu\test\servlet\RegisterServlet.java
 d:\coding\test\src\main\java\com\connectyu\test\utils\C3p0Utils.java
+d:\coding\test\src\main\java\com\connectyu\test\servlet\QuitServlet.java
 d:\coding\test\src\main\java\com\connectyu\test\model\User.java
 d:\coding\test\src\main\java\com\connectyu\test\model\Goods.java
 d:\coding\test\src\main\java\com\connectyu\test\utils\JdbcUtils.java
