@@ -22,7 +22,23 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">商品分类</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                       href="#">商品分类<span class="caret"></span></a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">全部分类</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">冰淇淋系列</a></li>
+                        <li><a href="#">零食系列</a></li>
+                        <li><a href="#">儿童系列</a></li>
+                        <li><a href="#">法式系列</a></li>
+                        <li><a href="#">经典系列</a></li>
+                        <li><a href="#">节日系列</a></li>
+                        <li><a href="#">买不起系列</a></li>
+                    </ul>
+                </li>
                 <li><a href="goodsListServlet">热销</a></li>
                 <li><a href="#">新品</a></li>
                 <li><a href="#">购物车</a></li>

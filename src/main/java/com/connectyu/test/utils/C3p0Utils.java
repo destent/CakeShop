@@ -10,4 +10,5 @@ public class C3p0Utils {
         ds = new ComboPooledDataSource();
     }
     public static DataSource getDataSource(){return ds;} 
+    private C3p0Utils(){}
 }

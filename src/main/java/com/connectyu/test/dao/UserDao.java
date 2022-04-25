@@ -74,9 +74,8 @@ public class UserDao {
                     user.getIsadmin(),
                     user.getIsvalidate()
             };
-            int i = queryRunner.update("insert into user(username, email, password, name, phone, address, isadmin, isvalidate) " +
+            return queryRunner.update("insert into user(username, email, password, name, phone, address, isadmin, isvalidate) " +
                     "values (?,?,?,?,?,?,?,?)", p);
-            return i;
         }
     }
 }

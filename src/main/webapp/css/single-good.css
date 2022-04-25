@@ -1,0 +1,112 @@
+a {
+    background-color: transparent;
+    transition: 0.5s all ease;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+    width: 1170px;
+}
+
+.sigle-grids {
+    padding: 4em 0;
+    display: flex;
+}
+.carousel {
+    width: 340px;
+    height: 340px;
+    margin-left: 40px;
+}
+
+.img-contral-list {
+    list-style: none;
+    display: flex;
+    margin: 5px auto;
+}
+
+.img-contral-list li {
+    margin: auto 2px;
+}
+
+.img-contral-list li img {
+    width: 110px;
+    height: 110px;
+}
+
+.sigle-grid {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sigle-grid h3 {
+    margin-top: 0px;
+    font-size: 1.7em;
+    line-height: 1.6em;
+    color: #5D4B33;
+    margin-bottom: 0.5em;
+    font-family: 'Marvel-Regular';
+}
+
+.sigle-grid p {
+    font-size: 1em;
+    line-height: 1.8em;
+    color: #999;
+}
+
+.sigle-grid p a {
+    background-color: transparent;
+    text-decoration: none;
+    color: #000000;
+}
+
+.item_price {
+    font-size: 1.5em;
+    color: #000;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.btn_form a {
+    outline: none;
+    display: inline-block;
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+    border: 2px solid #F07818;
+    border-radius: 5px;
+    background: #F07818;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+.btn_form a:hover{
+    background: #fff;
+    color:#5D4B33 ;
+    border: 2px solid #5D4B33;
+}
+
+.single-grid1 ul {
+    align-items: center;
+}
+
+.single-grid1 ul li {
+    width: 350px;
+    height: 43px;
+    border-bottom: 1px solid #ccc;
+}
+
+.single-grid1 ul li a {
+    font-size: 1em;
+    text-transform: capitalize;
+    line-height: 3em;
+    color: #999;
+    text-decoration: none;
+}
+
+.single-grid1 ul li a:hover {
+    color: #F07818;
+}

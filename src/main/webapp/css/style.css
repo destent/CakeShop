@@ -1,5 +1,11 @@
 a {
     text-decoration: none !important;  /*去掉a标签文字下面的下划线*/
+    color: #FFFFFF;
+}
+.pagination>.disabled>a,
+.pagination>.disabled>a:hover,
+.pagination>.disabled>a:focus{
+    background-color:transparent;
 }
 .header {
     display: flex;  /* 让header下面的元素在一行排列*/
@@ -56,7 +62,7 @@ a {
     height: 36px;
     background: #F07819;
     color: #fff;
-    line-height: 36px;
+    line-height: 24px;
     font-size: 14px;
     border: none;
 }
@@ -89,4 +95,12 @@ table tr:nth-child(odd) {
     text-align: center;
     background: #f07819;
     color: #fff;
+}
+/* 普通IE浏览器 样式清除 */
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+}
+/* 火狐浏览器样式清除 */
+input[type="number"]{
+    -moz-appearance:textfield;
 }

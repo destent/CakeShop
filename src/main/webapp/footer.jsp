@@ -7,5 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <footer style="margin-top: 20px">
-    <span >Author by 软件1192陈广煜</span>
+    <span >&copy;Author by 软件1192陈广煜</span>
 </footer>

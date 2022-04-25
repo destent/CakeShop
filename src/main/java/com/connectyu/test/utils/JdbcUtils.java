@@ -4,6 +4,7 @@ package com.connectyu.test.utils;
 import java.sql.*;
 
 public class JdbcUtils {
+    private JdbcUtils(){}
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Connection connection = null;
 
@@ -23,7 +24,6 @@ public class JdbcUtils {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-            rs=null;
         }
     }
 
@@ -34,7 +34,6 @@ public class JdbcUtils {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-            conn = null;
         }
         if (stmt != null) {
             try {
@@ -42,7 +41,6 @@ public class JdbcUtils {
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
-            stmt = null;
         }
     }
 

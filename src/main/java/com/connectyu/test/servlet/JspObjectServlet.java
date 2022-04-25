@@ -12,6 +12,7 @@ import java.io.IOException;
 
 @WebServlet(name = "JspObjectServlet")
 public class JspObjectServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //通过request对象传递值
         request.setAttribute("name1","Java语言程序设计");
@@ -26,7 +27,7 @@ public class JspObjectServlet extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/show.jsp");
         requestDispatcher.forward(request,response);
     }
-
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request,response);
     }
