@@ -28,20 +28,20 @@
                        href="#">商品分类<span class="caret"></span></a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="#">全部分类</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=0">全部分类</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">冰淇淋系列</a></li>
-                        <li><a href="#">零食系列</a></li>
-                        <li><a href="#">儿童系列</a></li>
-                        <li><a href="#">法式系列</a></li>
-                        <li><a href="#">经典系列</a></li>
-                        <li><a href="#">节日系列</a></li>
-                        <li><a href="#">买不起系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=1">冰淇淋系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=2">零食系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=3">儿童系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=4">法式系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=5">经典系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=8">节日系列</a></li>
+                        <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=11">买不起系列</a></li>
                     </ul>
                 </li>
                 <li><a href="goodsListServlet">热销</a></li>
                 <li><a href="#">新品</a></li>
-                <li><a href="#">购物车</a></li>
+                <li><a href="good_cart.jsp">购物车</a></li>
                 <li><a href="#">后台管理</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

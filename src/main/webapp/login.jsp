@@ -25,19 +25,22 @@
             <div class="form-group">
                 <label for="username" class="col-sm-2 control-label">用户名</label>
                 <div class="col-sm-8">
-                    <input type="text" name="username"  class="form-control" id="username" placeholder="username">
+                    <input type="text" name="username" value="${cookie.username.value}" class="form-control" id="username" placeholder="username">
                 </div>
             </div>
             <div class="form-group">
                 <label for="password" class="col-sm-2 control-label">密码</label>
                 <div class="col-sm-8">
-                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" name="password" value="${cookie.password.value}" class="form-control" id="password" placeholder="Password">
                 </div>
             </div>
             <div class="center-block ">
                 <div class="col-sm-offset-2 col-sm-8 alert alert-danger ${requestScope.status} " style="display: none" role="alert">
                     ${requestScope.info}
                 </div>
+            </div>
+            <div class="col-sm-offset-2 col-sm-4">
+                <label> <input type="checkbox" checked name="save" value="true">记住密码</label>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">

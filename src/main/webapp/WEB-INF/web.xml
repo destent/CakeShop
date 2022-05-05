@@ -26,4 +26,8 @@
     <servlet-name>JspObjectServlet</servlet-name>
     <url-pattern>/jspObjectServlet</url-pattern>
   </servlet-mapping>
+  <session-config>
+    <!--超时时间，单位分钟 <=0 永不超时 -->
+    <session-timeout>30</session-timeout>
+  </session-config>
 </web-app>

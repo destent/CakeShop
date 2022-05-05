@@ -42,7 +42,15 @@ public class GoodsDao {
         return queryRunner.query(sql,new BeanListHandler<>(Goods.class),
                 page.getPageNo()*page.getGoodsNum(),page.getGoodsNum());
     }
-
+    public List<Goods> findPageGoods(Page page,int typeId) throws SQLException {
+        if (typeId == 0)
+           return findPageGoods(page);
+        DataSource dataSource = C3p0Utils.getDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        String sql = "select * from (select * from goods where type_id = ?) as q where id limit ?,?";
+        return queryRunner.query(sql,new BeanListHandler<>(Goods.class),
+                typeId,page.getPageNo()*page.getGoodsNum(),page.getGoodsNum());
+    }
     /**
      * 查询商品数
      * @return
@@ -58,9 +66,24 @@ public class GoodsDao {
         JdbcUtils.close(connection,preparedStatement,resultSet);
         return i;
     }
+    public int countGoodsRow(int typeId) throws SQLException, ClassNotFoundException {
+        if (typeId == 0)
+           return countGoodsRow();
+        Connection connection = JdbcUtils.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement("select count(id) from goods where type_id = ?");
+        preparedStatement.setInt(1,typeId);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        resultSet.next();
+        int i = resultSet.getInt(1);
+        JdbcUtils.close(connection,preparedStatement,resultSet);
+        return i;
+    }
     public List<Goods> findGoodsByType(int type_id) throws SQLException {
         DataSource dataSource = C3p0Utils.getDataSource();
         QueryRunner queryRunner = new QueryRunner(dataSource);
-        return queryRunner.query("select * from goods where type_id = ?",new BeanListHandler<>(Goods.class),type_id);
+        if(type_id!=0)
+            return queryRunner.query("select * from goods where type_id = ?",new BeanListHandler<>(Goods.class),type_id);
+        else
+            return queryRunner.query("select * from goods",new BeanListHandler<>(Goods.class));
     }
 }

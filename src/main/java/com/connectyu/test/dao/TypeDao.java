@@ -19,6 +19,9 @@ public class TypeDao {
     public MyType findTypeById(int id) throws SQLException {
         DataSource dataSource = C3p0Utils.getDataSource();
         QueryRunner queryRunner = new QueryRunner(dataSource);
-        return queryRunner.query("select * from type where id = ?",new BeanHandler<>(MyType.class),id);
+        if(id !=0)
+            return queryRunner.query("select * from type where id = ?",new BeanHandler<>(MyType.class),id);
+        else
+            return new MyType(0,"全部系列");
     }
 }

@@ -6,6 +6,13 @@ public class MyType {
   private long id;
   private String name;
 
+  public MyType(int id,String name) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public MyType() {
+  }
 
   public long getId() {
     return id;

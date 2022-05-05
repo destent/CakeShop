@@ -11,8 +11,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/good-list.css"/>
 
     <title>热销商品</title>
@@ -23,7 +23,7 @@
 <!--products-->
 <div class="products">
     <div class="container">
-        <h2>热销商品</h2>
+        <h2>${requestScope.type.name}</h2>
         <div class="product-model-sec">
 
             <c:forEach items="${requestScope.page.goodsList}" var="goods">
@@ -47,13 +47,14 @@
         </div>
         <div style="margin: 0 auto;width: 500px">
 
-            <form action="goodsListServlet" class="pagination">
+            <form action="categoryServlet" class="pagination">
                 <div class="btn ${requestScope.status1}" style="padding: 0">
-                    <a class="btn " href="goodsListServlet?pageNo=${requestScope.page.pageNo}"
+                    <a class="btn " href="categoryServlet?pageNo=${requestScope.page.pageNo}&typeId=${requestScope.type.id}"
                        onclick="return ${requestScope.link1}" aria-label="Previous">
                         <span aria-hidden="true">上一页</span>
                     </a>
                 </div>
+                <input style="display: none" name="typeId" value="${requestScope.type.id}">
                 <label>跳转至：<input style="width: 40px" type="number"
                                   max="${requestScope.page.pageNum}" min="1"
                                   name="pageNo" value="${requestScope.page.pageNo+1}"
@@ -61,7 +62,7 @@
                 共${requestScope.page.pageNum}页
                 <input type="submit" class="btn" style="line-height: 24px">
                 <div class="btn ${requestScope.status2}" style="padding: 0">
-                    <a class="btn" href="goodsListServlet?pageNo=${requestScope.page.pageNo+2}"
+                    <a class="btn" href="categoryServlet?pageNo=${requestScope.page.pageNo+2}&typeId=${requestScope.type.id}"
                        aria-label="Next" onclick="return ${requestScope.link2}">
                         <span >下一页</span>
                     </a>
@@ -76,4 +77,3 @@
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="js/bootstrap.min.js"></script>
 </html>
-

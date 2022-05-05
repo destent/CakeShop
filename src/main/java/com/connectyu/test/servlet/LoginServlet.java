@@ -5,10 +5,7 @@ import com.connectyu.test.model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -22,6 +19,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String isSave = req.getParameter("save");
+        Cookie cookie = new Cookie("username",username);
+        Cookie cookie2 = new Cookie("password","");
+        if("true".equals(isSave))
+            cookie2 = new Cookie("password",password);
+        resp.addCookie(cookie);
+        resp.addCookie(cookie2);
+
         RequestDispatcher dispatcher;
         UserDao userDao = new UserDao();
         User user = null;

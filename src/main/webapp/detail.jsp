@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/single-good.css" />
 </head>
 <body>
-
+<jsp:include page="nav.jsp"/>
 <div class="container">
     <div class="sigle-grids">
         <div class="sigle-grid">
@@ -48,7 +48,7 @@
                 <div class="clearfix"></div>
             </div>
             <div class="btn_form">
-                <a href="#">加入购物车</a>
+                <a href="${pageContext.request.contextPath}/addGoodsToCartServlet">加入购物车</a>
             </div>
         </div>
         <div class="single-grid1">

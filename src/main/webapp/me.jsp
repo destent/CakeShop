@@ -74,15 +74,38 @@
                     <input type="text" name="address" class="form-control" id="address" value="${sessionScope.user.address}">
                 </div>
             </div>
+            <input class="center-block btn" type="submit"/>
         </form>
+        <div class="row">
+        <div class="col-sm-8 wuliu col-sm-offset-2" style="margin-bottom: 20px">
+            安全信息
+        </div>
+        </div>
+        <div class="row">
+            <form action="" method="post">
+                <div class="row">
+                    <span class="col-sm-2"></span>
+                    <div class="form-group center-block col-sm-8">
+                        <label for="oldpassword">旧密码</label>
+                        <input type="password" class="form-control" name="oldpassword" id="oldpassword" >
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="col-sm-2"></span>
+                    <div class="form-group  col-sm-8">
+                        <label for="newpassword">新密码</label>
+                        <input type="password" name="newpassword" class="form-control" id="newpassword">
+                    </div>
+                </div>
+                <input class="center-block btn" type="submit"/>
+            </form>
     </div>
 </div>
+</div>
 
-
+</body>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="js/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-        crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 <script src="js/bootstrap.min.js"></script>
-</body>
 </html>

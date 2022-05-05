@@ -22,7 +22,6 @@ public class UserDao {
         return queryRunner.query("select * from user where username = ? and password = ?",
                 new BeanHandler<>(User.class), username, password);
     }
-
     /**
      * 通过用户名查询用户
      * @param username
@@ -77,5 +76,15 @@ public class UserDao {
             return queryRunner.update("insert into user(username, email, password, name, phone, address, isadmin, isvalidate) " +
                     "values (?,?,?,?,?,?,?,?)", p);
         }
+    }
+    public int update(String password,int id) throws SQLException {
+        DataSource dataSource = C3p0Utils.getDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        return queryRunner.update("update user set password = ? where id  = ?",password,id);
+    }
+    public int update(String name,String phone,String address,int id) throws SQLException {
+        DataSource dataSource = C3p0Utils.getDataSource();
+        QueryRunner queryRunner = new QueryRunner(dataSource);
+        return queryRunner.update("update user set name = ?,phone = ?,address = ? where id = ?",name,phone,address,id);
     }
 }
