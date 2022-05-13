@@ -11,6 +11,6 @@
         <property name="checkoutTimeout">3000</property>
     </default-config>
 
-<!--    <named-config name="otherc3p0">-->
+<!--    <named-config name="otherC3p0">-->
 <!--    </named-config>-->
 </c3p0-config>

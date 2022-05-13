@@ -3,7 +3,7 @@ package com.connectyu.test.servlet;
 import com.connectyu.test.dao.GoodsDao;
 import com.connectyu.test.dao.TypeDao;
 import com.connectyu.test.model.Goods;
-import com.connectyu.test.model.MyType;
+import com.connectyu.test.model.CakeType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +19,7 @@ public class DetailServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         Goods goods = null;
-        MyType type = null;
+        CakeType type = null;
         GoodsDao goodsDao= new GoodsDao();
         TypeDao typeDao = new TypeDao();
         try {

@@ -1,7 +1,7 @@
 package com.connectyu.test.servlet;
 
 import com.connectyu.test.dao.GoodsDao;
-import com.connectyu.test.dao.ShoppingCart;
+import com.connectyu.test.model.ShoppingCart;
 import com.connectyu.test.model.Goods;
 
 import javax.servlet.ServletException;

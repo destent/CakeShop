@@ -1,17 +1,17 @@
 package com.connectyu.test.model;
 
 
-public class MyType {
+public class CakeType {
 
   private long id;
   private String name;
 
-  public MyType(int id,String name) {
+  public CakeType(int id, String name) {
     this.id = id;
     this.name = name;
   }
 
-  public MyType() {
+  public CakeType() {
   }
 
   public long getId() {

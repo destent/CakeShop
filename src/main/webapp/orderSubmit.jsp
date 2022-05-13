@@ -5,7 +5,7 @@
   Time: 19:53
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <title>确认订单</title>
@@ -15,30 +15,32 @@
     <jsp:include page="nav.jsp"/>
     <div class="container">
         <h2>确认收货地址</h2>
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="orderServlet">
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">收货人</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" required class="form-control" id="name" placeholder="请输入收货人姓名">
+                    <input type="text" name="name" required class="form-control" id="name" placeholder="${sessionScope.user.name}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="address" class="col-sm-2 control-label">收货地址</label>
                 <div class="col-sm-10">
-                    <input type="text" name="address" required class="form-control" id="address" placeholder="请输入收货地址">
+                    <input type="text" name="address" required class="form-control" id="address" placeholder="${sessionScope.user.address}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="phone" class="col-sm-2 control-label">电话</label>
                 <div class="col-sm-10">
-                    <input type="text" name="phone" required class="form-control" id="phone" placeholder="请输入收件人电话">
+                    <input type="text" name="phone" required class="form-control" id="phone" placeholder="${sessionScope.user.phone}">
                 </div>
             </div>
             <h2>选择支付方式</h2>
-            <p>支付金额：</p>
-            <label><input type="radio" name="paytype"><img src=""></label>
-            <label><input type="radio" name="paytype"><img src=""></label>
-            <button type="submit">提交</button>
+            <p>支付金额：${sessionScope.cart.sumMoney}</p>
+            <label><input type="radio" name="paytype" value="1">微信<img src=""></label>
+            <label><input type="radio" name="paytype" value="2">支付宝<img src=""></label>
+            <div class="row">
+                <button class="btn btn-primary" type="submit">提交</button>
+            </div>
         </form>
     </div>
 </body>

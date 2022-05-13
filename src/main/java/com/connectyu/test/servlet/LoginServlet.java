@@ -7,6 +7,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.sql.SQLException;
 
 public class LoginServlet extends HttpServlet {
@@ -20,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String isSave = req.getParameter("save");
-        Cookie cookie = new Cookie("username",username);
+        Cookie cookie = new Cookie("username", URLEncoder.encode(username, "UTF-8"));
         Cookie cookie2 = new Cookie("password","");
         if("true".equals(isSave))
             cookie2 = new Cookie("password",password);

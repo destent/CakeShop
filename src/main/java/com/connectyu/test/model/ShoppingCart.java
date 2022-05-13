@@ -1,4 +1,4 @@
-package com.connectyu.test.dao;
+package com.connectyu.test.model;
 
 import java.util.ArrayList;
 import java.util.List;

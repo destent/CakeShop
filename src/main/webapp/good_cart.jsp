@@ -30,7 +30,7 @@
 
     <div class="cart-price">
         <h3>订单总金额:￥${sessionScope.cart.sumMoney}</h3>
-        <a href="#" class="submit">提交订单</a>
+        <a href="orderSubmit.jsp" class="submit">提交订单</a>
     </div>
 </div>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->

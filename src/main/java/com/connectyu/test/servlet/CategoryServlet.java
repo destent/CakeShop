@@ -2,7 +2,7 @@ package com.connectyu.test.servlet;
 
 import com.connectyu.test.dao.GoodsDao;
 import com.connectyu.test.dao.TypeDao;
-import com.connectyu.test.model.MyType;
+import com.connectyu.test.model.CakeType;
 import com.connectyu.test.model.Page;
 
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class CategoryServlet extends HttpServlet {
         TypeDao typeDao = new TypeDao();
         GoodsDao goodsDao = new GoodsDao();
         Page page = new Page();
-        MyType type = null;
+        CakeType type = null;
         int typeId = Integer.parseInt(req.getParameter("typeId"));
         String pageNo = req.getParameter("pageNo");
         if (pageNo != null) {

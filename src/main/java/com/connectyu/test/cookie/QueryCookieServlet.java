@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 
 @WebServlet(name = "QueryCookieServlet",urlPatterns = "/queryCookieServlet")
 public class QueryCookieServlet extends HttpServlet {
@@ -17,7 +18,7 @@ public class QueryCookieServlet extends HttpServlet {
             String name = cookie.getName();
             String value = cookie.getValue();
             System.out.println(name+value);
-            System.out.println(URLDecoder.decode(name,"utf-8")+URLDecoder.decode(value,"utf-8"));
+            System.out.println(URLDecoder.decode(name, StandardCharsets.UTF_8)+URLDecoder.decode(value, StandardCharsets.UTF_8));
         }
     }
 
