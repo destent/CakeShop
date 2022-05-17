@@ -1,10 +1,12 @@
+import com.connectyu.test.dao.GoodsDao;
 import com.connectyu.test.dao.OrderDao;
 import com.connectyu.test.model.Order;
+import org.junit.Test;
 
 import java.util.Date;
 
-public class Test {
-    @org.junit.Test
+public class MyTest {
+    @Test
     public void addOrder(){
         OrderDao dao = new OrderDao();
         Order order = new Order();
@@ -19,5 +21,10 @@ public class Test {
         order.setPaytype(1);
         order.setId(1);
         dao.insert(order);
+    }
+    @Test
+    public void find(){
+        GoodsDao goodsDao = new GoodsDao();
+        System.out.println(goodsDao.findGoodsCount());
     }
 }

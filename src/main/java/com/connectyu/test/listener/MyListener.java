@@ -23,7 +23,7 @@ public class MyListener implements ServletContextListener,
          initialized(when the Web application is deployed). 
          You can initialize servlet context related data here.
       */
-        System.out.println("ServletContest 初始化");
+//        System.out.println("ServletContest 初始化");
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
@@ -31,17 +31,17 @@ public class MyListener implements ServletContextListener,
          (the Web application) is undeployed or 
          Application Server shuts down.
       */
-        System.out.println("ServletContest 销毁");
+//        System.out.println("ServletContest 销毁");
     }
 
     @Override
     public void requestDestroyed(ServletRequestEvent sre) {
-        System.out.println("request 销毁");
+//        System.out.println("request 销毁");
     }
 
     @Override
     public void requestInitialized(ServletRequestEvent sre) {
-        System.out.println("request 初始化");
+//        System.out.println("request 初始化");
     }
 
     // -------------------------------------------------------
@@ -49,11 +49,12 @@ public class MyListener implements ServletContextListener,
     // -------------------------------------------------------
     public void sessionCreated(HttpSessionEvent se) {
         /* Session is created. */
-        System.out.println("session 创建");
+//        System.out.println("session 创建");
     }
 
     public void sessionDestroyed(HttpSessionEvent se) {
-        System.out.println("session 销毁");
+
+//        System.out.println("session 销毁");
     }
 
 }

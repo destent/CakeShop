@@ -15,7 +15,7 @@
     <jsp:include page="nav.jsp"/>
     <div class="container">
         <h2>确认收货地址</h2>
-        <form class="form-horizontal" action="orderServlet">
+        <form class="form-horizontal" action="orderServlet" method="post">
             <div class="form-group">
                 <label for="name" class="col-sm-2 control-label">收货人</label>
                 <div class="col-sm-10">

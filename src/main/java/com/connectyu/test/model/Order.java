@@ -3,54 +3,25 @@ package com.connectyu.test.model;
 import java.util.Date;
 
 public class Order {
-    /**
-     *
-     */
+
     private Integer id;
 
-    /**
-     *
-     */
     private Double total;
 
-    /**
-     *
-     */
     private Integer amount;
 
-    /**
-     *
-     */
     private int status;
 
-    /**
-     *
-     */
     private int paytype;
 
-    /**
-     *
-     */
     private String name;
 
-    /**
-     *
-     */
     private String phone;
 
-    /**
-     *
-     */
     private String address;
 
-    /**
-     *
-     */
     private Date datetime;
 
-    /**
-     *
-     */
     private Integer userId;
     public void setStatus(int status) {
         this.status = status;

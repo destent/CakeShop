@@ -53,14 +53,14 @@
         </div>
         <div class="single-grid1">
             <ul style="list-style:none;">
-                <li><a href="#">全部系列</a></li>
-                <li><a href="#">冰淇淋系列</a></li>
-                <li><a href="#">零食系列</a></li>
-                <li><a href="#">儿童系列</a></li>
-                <li><a href="#">法式系列</a></li>
-                <li><a href="#">经典系列</a></li>
-                <li><a href="#">节日系列</a></li>
-                <li><a href="#">买不起系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=0">全部系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=1">冰淇淋系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=2">零食系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=3">儿童系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=4">法式系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=5">经典系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=8">节日系列</a></li>
+                <li><a href="${pageContext.request.contextPath}/categoryServlet?typeId=11">买不起系列</a></li>
             </ul>
         </div>
     </div>

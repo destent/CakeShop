@@ -41,7 +41,7 @@ public class CategoryServlet extends HttpServlet {
                     :goodsDao.countGoodsRow(typeId)/page.getGoodsNum();
             page.setPageNum(num);
             page.setGoodsList(goodsDao.findPageGoods(page,typeId));
-        } catch (SQLException | ClassNotFoundException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         req.setAttribute("page",page);

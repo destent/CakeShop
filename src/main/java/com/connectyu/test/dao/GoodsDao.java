@@ -8,6 +8,7 @@ import com.connectyu.test.utils.JdbcUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -57,26 +58,46 @@ public class GoodsDao {
      * @throws SQLException
      * @throws ClassNotFoundException
      */
-    public int countGoodsRow() throws SQLException, ClassNotFoundException {
-        Connection connection = JdbcUtils.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("select count(id) from goods");
-        ResultSet resultSet = preparedStatement.executeQuery();
-        resultSet.next();
-        int i = resultSet.getInt(1);
-        JdbcUtils.close(connection,preparedStatement,resultSet);
-        return i;
+    public int countGoodsRow(){
+        String sql = "select count(id) as count from goods";
+        QueryRunner queryRunner = new QueryRunner(C3p0Utils.getDataSource());
+        try {
+            Long count = queryRunner.query(sql, new ScalarHandler<>("count"));
+            return count.intValue();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
     }
-    public int countGoodsRow(int typeId) throws SQLException, ClassNotFoundException {
+
+    /**
+     * 查询指定类型商品数
+     * @param typeId
+     * @return
+     */
+    public int countGoodsRow(int typeId){
         if (typeId == 0)
            return countGoodsRow();
-        Connection connection = JdbcUtils.getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("select count(id) from goods where type_id = ?");
-        preparedStatement.setInt(1,typeId);
-        ResultSet resultSet = preparedStatement.executeQuery();
-        resultSet.next();
-        int i = resultSet.getInt(1);
-        JdbcUtils.close(connection,preparedStatement,resultSet);
-        return i;
+        String sql = "select count(id) as count from goods where type_id = ?";
+        QueryRunner queryRunner = new QueryRunner(C3p0Utils.getDataSource());
+        try {
+            Long count = queryRunner.query(sql, new ScalarHandler<>("count"),typeId);
+            return count.intValue();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
+    }
+    public int findGoodsCount(){
+        String sql = "select count(id) as count from goods";
+        QueryRunner queryRunner = new QueryRunner(C3p0Utils.getDataSource());
+        try {
+            Long count = queryRunner.query(sql, new ScalarHandler<>("count"));
+            return count.intValue();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return 0;
     }
     public List<Goods> findGoodsByType(int type_id) throws SQLException {
         DataSource dataSource = C3p0Utils.getDataSource();

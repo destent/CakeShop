@@ -27,7 +27,7 @@ public class GoodsListServlet extends HttpServlet {
             page.setPageNum(num);
             page.setGoodsList(goodsDao.findPageGoods(page));
 
-        } catch (SQLException | ClassNotFoundException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         request.setAttribute("page",page);
